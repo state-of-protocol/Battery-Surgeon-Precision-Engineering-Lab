@@ -3,150 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Battery Surgeon | Precision Engineering for Longevity</title>
+    <title>Battery Surgeon | Precision Engineering Lab</title>
     
-    <!-- Tailwind CSS for Speed & Layout -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Syne (Premium/Industrial) & Inter (Clean/Modern) -->
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Syne & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --charcoal: #121212;
-        }
-        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; }
-        h1, h2, h3, .font-syne { font-family: 'Syne', sans-serif; }
-        
-        .glass-nav {
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .hero-gradient {
-            background: linear-gradient(rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.95)), 
-                        url('https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2072&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .gold-border-glow {
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            transition: all 0.4s ease;
-        }
-
-        .gold-border-glow:hover {
-            border-color: var(--gold);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
-        }
-
-        .btn-gold {
-            background: var(--gold);
-            color: #000;
-            transition: all 0.3s ease;
-        }
-
-        .btn-gold:hover {
-            background: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        /* Custom Scrollbar for Premium Feel */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
-    </style>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="text-slate-200 selection:bg-gold selection:text-black">
+<body class="text-slate-200 selection:bg-[#D4AF37] selection:text-black">
 
-    <!-- Navigation -->
-    <nav class="glass-nav fixed w-full z-50 px-6 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="text-2xl font-extrabold tracking-tighter font-syne uppercase">
-                BATTERY<span class="text-[#D4AF37]">SURGEON</span>
+    <!-- 1. Custom Luxury Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-outline"></div>
+
+    <!-- 2. Premium Preloader -->
+    <div id="preloader">
+        <div class="text-center">
+            <div class="text-xl font-black font-syne tracking-[0.5em] text-white mb-4">BATTERY SURGEON</div>
+            <div class="text-[10px] text-[#D4AF37] tracking-[0.3em] uppercase mb-6">Calibrating Diagnostic Tools...</div>
+            <div class="loader-bar mx-auto">
+                <div class="loader-fill" id="loaderFill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Navigation -->
+    <nav class="navbar px-6 py-4">
+        <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
+            <div class="logo font-syne uppercase">
+                BATTERY<span class="gold-text-gradient">SURGEON</span>
             </div>
             <ul class="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.2em] font-bold">
-                <li><a href="#philosophy" class="hover:text-[#D4AF37] transition">Philosophy</a></li>
-                <li><a href="#services" class="hover:text-[#D4AF37] transition">The Surgery</a></li>
-                <li><a href="#calculator" class="hover:text-[#D4AF37] transition">ROI Calculator</a></li>
+                <li><a href="#philosophy" class="hover:text-[#D4AF37] transition">Manifesto</a></li>
+                <li><a href="#services" class="hover:text-[#D4AF37] transition">Restoration</a></li>
+                <li><a href="#calculator" class="hover:text-[#D4AF37] transition">ROI Analysis</a></li>
             </ul>
-            <a href="https://wa.me/yournumber" class="btn-gold px-7 py-2 rounded-full text-xs font-black uppercase tracking-widest">
-                Consultation
+            <a href="https://wa.me/yournumber" class="btn-gold">
+                Request Diagnostic
             </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-gradient min-h-screen flex items-center justify-center pt-20 px-6 text-center">
-        <div class="max-w-5xl">
-            <span class="inline-block border border-[#D4AF37]/30 text-[#D4AF37] text-[10px] font-bold px-5 py-2 rounded-full uppercase tracking-[0.3em] mb-8">
-                ESTABLISHED 2026 • PRECISION RECOVERY LAB
+    <!-- 4. Hero Section (with Parallax Background) -->
+    <header class="hero">
+        <div class="max-w-5xl z-10">
+            <span class="inline-block border border-[#D4AF37]/30 text-[#D4AF37] text-[10px] font-bold px-6 py-2 rounded-full uppercase tracking-[0.4em] mb-10 float-anim">
+                Industrial Laboratory • Established 2026
             </span>
-            <h1 class="text-5xl md:text-8xl font-extrabold text-white mb-8 leading-none tracking-tighter">
-                REVIVING POWER.<br><span class="text-[#D4AF37]">REDEFINING LIFE.</span>
+            <h1 class="font-extrabold text-white mb-8 leading-none tracking-tighter">
+                MOLECULAR<br><span class="gold-text-gradient">RESTORATION.</span>
             </h1>
             <p class="text-lg md:text-xl text-slate-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-                Sains kejuruteraan untuk memulihkan sel Lithium-Ion melalui protokol klinikal gred industri. Kepakaran kami menjamin kelestarian tenaga anda.
+                Sains kejuruteraan gred tinggi untuk memulihkan integriti sel Lithium-Ion. Kami tidak sekadar membaiki; kami mengoptimumkan aset tenaga anda.
             </p>
-            <div class="flex flex-col md:flex-row gap-5 justify-center items-center">
-                <a href="#calculator" class="btn-gold px-10 py-5 rounded-xl font-black uppercase tracking-widest text-sm w-full md:w-auto">
-                    Calculate ROI
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <a href="#calculator" class="btn-gold w-full md:w-auto">
+                    Analyze Asset ROI
                 </a>
-                <a href="#services" class="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-10 py-5 rounded-xl font-bold backdrop-blur-sm transition text-sm uppercase tracking-widest w-full md:w-auto">
-                    The Surgery Protocol
+                <a href="#services" class="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-10 py-5 rounded-sm font-bold backdrop-blur-md transition text-[10px] uppercase tracking-[0.2em] w-full md:w-auto">
+                    The Restoration Protocol
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- ROI Calculator Section -->
-    <section id="calculator" class="py-32 px-6 bg-[#0f0f0f]">
+    <!-- 5. Trust Bar (Credibility) -->
+    <div class="trust-bar">
+        <span class="text-[10px] text-white/50 font-bold tracking-widest mr-10 uppercase">Trusted Expertise:</span>
+        <div class="flex gap-16 grayscale opacity-40">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg" alt="Tesla Logo" class="h-5">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/BYD_logo.svg" alt="BYD Logo" class="h-5">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/CATL_logo.svg" alt="CATL Logo" class="h-5">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/LG_Chem_logo.svg" alt="LG Logo" class="h-5">
+        </div>
+    </div>
+
+    <!-- 6. ROI Analysis Section -->
+    <section id="calculator" class="py-32 px-6 bg-[#0f0f0f] border-t border-white/5">
         <div class="max-w-6xl mx-auto">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
+            <div class="grid lg:grid-cols-2 gap-24 items-center">
                 <div>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-8 text-white tracking-tight">Precision ROI<br><span class="text-[#D4AF37]">Analysis</span></h2>
-                    <p class="text-slate-400 text-lg mb-10 leading-relaxed">
-                        Jangan bazirkan modal untuk penggantian unit baru secara pramatang. Teknologi pemulihan kami mengembalikan prestasi asal sel dengan pecahan kos yang jauh lebih rendah.
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8 text-white tracking-tight">Asset Optimization<br><span class="gold-text-gradient">Strategy</span></h2>
+                    <p class="text-slate-400 text-lg mb-10 leading-relaxed font-light italic">
+                        "Pelaburan dalam pemulihan molekul adalah 70% lebih efisien berbanding pemerolehan unit baru."
                     </p>
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-5">
-                            <div class="w-12 h-12 rounded-full bg-[#D4AF37]/10 flex items-center justify-center border border-[#D4AF37]/20">
-                                <span class="text-[#D4AF37] font-bold text-sm">01</span>
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-6 group">
+                            <div class="w-14 h-14 rounded-full bg-[#D4AF37]/5 flex items-center justify-center border border-[#D4AF37]/20 group-hover:border-[#D4AF37] transition">
+                                <span class="text-[#D4AF37] font-bold text-xs">01</span>
                             </div>
-                            <span class="text-sm font-semibold tracking-wide uppercase">Maksimumkan Jangka Hayat Aset</span>
+                            <span class="text-xs font-bold tracking-[0.2em] uppercase">Maksimumkan Jangka Hayat Aset Korporat</span>
                         </div>
-                        <div class="flex items-center gap-5">
-                            <div class="w-12 h-12 rounded-full bg-[#D4AF37]/10 flex items-center justify-center border border-[#D4AF37]/20">
-                                <span class="text-[#D4AF37] font-bold text-sm">02</span>
+                        <div class="flex items-center gap-6 group">
+                            <div class="w-14 h-14 rounded-full bg-[#D4AF37]/5 flex items-center justify-center border border-[#D4AF37]/20 group-hover:border-[#D4AF37] transition">
+                                <span class="text-[#D4AF37] font-bold text-xs">02</span>
                             </div>
-                            <span class="text-sm font-semibold tracking-wide uppercase">Pengurangan Sisa E-Waste Industri</span>
+                            <span class="text-xs font-bold tracking-[0.2em] uppercase">Pengurangan Jejak Karbon & E-Waste</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="bg-[#161616] p-10 md:p-14 rounded-[2rem] border border-white/5 shadow-2xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-8 opacity-10">
-                        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1"><path d="M12 2v20M2 12h20" /></svg>
-                    </div>
-                    <div class="space-y-8 relative z-10">
+                <div class="calc-card">
+                    <div class="space-y-10 relative z-10">
                         <div>
-                            <label class="block text-[10px] font-black text-[#D4AF37] mb-4 uppercase tracking-[0.2em]">Kos Bateri Baru (RM)</label>
-                            <input type="number" id="newBatteryPrice" placeholder="Contoh: 40000" 
-                                   class="w-full bg-black/50 border border-white/10 rounded-2xl px-6 py-5 text-[#D4AF37] focus:outline-none focus:border-[#D4AF37] transition text-2xl font-bold font-syne">
+                            <label class="block text-[10px] font-black text-[#D4AF37] mb-4 uppercase tracking-[0.3em]">Capital Expenditure (RM/Unit)</label>
+                            <input type="number" id="newBatteryPrice" placeholder="Contoh: 45,000" 
+                                   class="w-full bg-transparent border-b border-white/10 px-0 py-4 text-white focus:outline-none focus:border-[#D4AF37] transition text-3xl font-syne tracking-tighter">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-black text-[#D4AF37] mb-4 uppercase tracking-[0.2em]">Kuantiti Unit (Aset)</label>
+                            <label class="block text-[10px] font-black text-[#D4AF37] mb-4 uppercase tracking-[0.3em]">Quantity (Asset Units)</label>
                             <input type="number" id="unitCount" value="1" 
-                                   class="w-full bg-black/50 border border-white/10 rounded-2xl px-6 py-5 text-[#D4AF37] focus:outline-none focus:border-[#D4AF37] transition text-2xl font-bold font-syne">
+                                   class="w-full bg-transparent border-b border-white/10 px-0 py-4 text-white focus:outline-none focus:border-[#D4AF37] transition text-3xl font-syne tracking-tighter">
                         </div>
-                        <div class="pt-10 border-t border-white/5">
-                            <span class="text-slate-500 text-[10px] font-bold uppercase tracking-[0.2em]">Anggaran Penjimatan Bersih:</span>
-                            <div id="savingsResult" class="text-5xl md:text-6xl font-black text-white mt-4 font-syne tracking-tighter">RM 0.00</div>
-                            <p class="text-[10px] text-slate-500 mt-6 italic tracking-wide font-medium">*Berdasarkan audit teknikal purata kos pemulihan 30% berbanding unit baru.</p>
+                        <div class="pt-10">
+                            <span class="text-slate-500 text-[10px] font-bold uppercase tracking-[0.3em]">Net Recovery Savings:</span>
+                            <div id="savingsResult" class="text-5xl md:text-7xl font-black gold-text-gradient mt-4 font-syne tracking-tighter">RM 0.00</div>
                         </div>
                     </div>
                 </div>
@@ -154,109 +129,153 @@
         </div>
     </section>
 
-    <!-- The Surgery Process -->
+    <!-- 7. Restoration Protocol -->
     <section id="services" class="py-32 px-6">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">The "Surgery" Protocol</h2>
-            <p class="text-slate-500 mb-20 max-w-xl mx-auto uppercase text-xs tracking-[0.2em] font-bold">Prosedur klinikal untuk pemulihan sel tahap tinggi</p>
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">Molecular Protocol</h2>
+                <div class="premium-divider mx-auto"></div>
+            </div>
             
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="p-12 rounded-[2.5rem] bg-[#121212] border border-white/5 gold-border-glow text-left group">
-                    <div class="text-[#D4AF37] text-6xl font-black mb-8 opacity-10 group-hover:opacity-40 transition-opacity font-syne">01</div>
-                    <h3 class="text-xl font-bold text-white mb-5 uppercase tracking-wider">Diagnostic & Stress Test</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed font-light">Analisis mendalam terhadap rintangan dalaman (Internal Resistance) dan kestabilan voltan setiap sel secara diskrit.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="step-card group">
+                    <div class="step-num">01</div>
+                    <h3 class="text-sm font-black text-[#D4AF37] mb-6 uppercase tracking-widest">Diagnostic Surgery</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed font-light">Analisis spektrum rintangan sel secara mendalam bagi mengesan ketidakstabilan kimia pada peringkat awal.</p>
                 </div>
-                <div class="p-12 rounded-[2.5rem] bg-[#121212] border border-white/5 gold-border-glow text-left group">
-                    <div class="text-[#D4AF37] text-6xl font-black mb-8 opacity-10 group-hover:opacity-40 transition-opacity font-syne">02</div>
-                    <h3 class="text-xl font-bold text-white mb-5 uppercase tracking-wider">Cell Balancing</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed font-light">Penyelarasan semula kapasiti tenaga antara sel untuk memastikan kitaran cas-nyahcas yang seragam.</p>
+                <div class="step-card group">
+                    <div class="step-num">02</div>
+                    <h3 class="text-sm font-black text-[#D4AF37] mb-6 uppercase tracking-widest">Inert-Gas Resupply</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed font-light">Penyelarasan semula kapasiti ion melalui proses imbangan sel (Cell Balancing) gred makmal.</p>
                 </div>
-                <div class="p-12 rounded-[2.5rem] bg-[#121212] border border-white/5 gold-border-glow text-left group">
-                    <div class="text-[#D4AF37] text-6xl font-black mb-8 opacity-10 group-hover:opacity-40 transition-opacity font-syne">03</div>
-                    <h3 class="text-xl font-bold text-white mb-5 uppercase tracking-wider">Thermal Optimization</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed font-light">Pembersihan kimia dan pengoptimuman sistem haba bagi mencegah degradasi termal di masa hadapan.</p>
+                <div class="step-card group">
+                    <div class="step-num">03</div>
+                    <h3 class="text-sm font-black text-[#D4AF37] mb-6 uppercase tracking-widest">Thermal Mitigation</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed font-light">Pengoptimuman sistem haba bagi memastikan sel beroperasi dalam zon suhu puncak secara konsisten.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Expert Guide Section -->
+    <!-- 8. Case Reports (Social Proof) -->
+    <section class="py-32 px-6 bg-[#0f0f0f]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl font-bold mb-16 text-center uppercase tracking-[0.5em]">Clinical Case Reports</h2>
+            <div class="case-report-grid">
+                <div class="case-card">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="case-id">#CASE-8821</span>
+                        <span class="case-status">Restored</span>
+                    </div>
+                    <h4 class="text-white font-bold mb-2">Tesla Model S Plaid</h4>
+                    <p class="text-xs text-slate-500 mb-6 font-mono">ISSUE: Critical SoH Degradation (74%)<br>ACTION: Deep Cell Recalibration</p>
+                    <div class="text-sm font-bold text-[#D4AF37]">Final SoH: 94%</div>
+                </div>
+                <div class="case-card">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="case-id">#CASE-9104</span>
+                        <span class="case-status">Restored</span>
+                    </div>
+                    <h4 class="text-white font-bold mb-2">BYD Atto 3</h4>
+                    <p class="text-xs text-slate-500 mb-6 font-mono">ISSUE: Thermal Runaway Risk Detected<br>ACTION: BMS Thermal Refurbishment</p>
+                    <div class="text-sm font-bold text-[#D4AF37]">Final SoH: 98%</div>
+                </div>
+                <div class="case-card">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="case-id">#CASE-7732</span>
+                        <span class="case-status">Restored</span>
+                    </div>
+                    <h4 class="text-white font-bold mb-2">Porsche Taycan</h4>
+                    <p class="text-xs text-slate-500 mb-6 font-mono">ISSUE: Copper Shunting Risk<br>ACTION: Molecular Desulfation</p>
+                    <div class="text-sm font-bold text-[#D4AF37]">Final SoH: 92%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. The Surgeon's Manifesto -->
     <section id="philosophy" class="py-32 px-6 bg-white text-slate-900 rounded-t-[4rem]">
         <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-20">
-                <span class="text-[10px] font-black text-[#D4AF37] uppercase tracking-[0.4em] mb-4 block">White Paper</span>
-                <h2 class="text-4xl md:text-6xl font-black text-black tracking-tight">The Golden Rules</h2>
+            <div class="text-center mb-24">
+                <span class="text-[10px] font-black text-[#D4AF37] uppercase tracking-[0.5em] mb-4 block underline">Research & Development</span>
+                <h2 class="text-4xl md:text-7xl font-black text-black tracking-tighter">The Surgeon's Manifesto</h2>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12 mb-20">
-                <div class="p-10 bg-slate-50 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition">
-                    <div class="text-4xl mb-6 text-[#D4AF37]">⚖️</div>
-                    <h3 class="font-black text-xl mb-4 uppercase tracking-tight text-slate-800">Zon Selamat 20-80</h3>
-                    <p class="text-slate-600 leading-relaxed font-light">Pengecasan melebihi 80% secara berterusan menyebabkan 'stress' voltan yang tinggi pada struktur kimia sel Lithium.</p>
+            <div class="grid md:grid-cols-2 gap-16 mb-24">
+                <div class="p-12 bg-slate-50 border border-slate-100 rounded-sm">
+                    <div class="text-4xl mb-8">⚖️</div>
+                    <h3 class="font-black text-xl mb-4 uppercase tracking-tighter">Ion Equilibrium (20-80)</h3>
+                    <p class="text-slate-600 leading-relaxed font-light">Mengekalkan caj antara 20% ke 80% adalah mandatori bagi mengelakkan perpecahan struktur kimia litium secara kekal.</p>
                 </div>
-                <div class="p-10 bg-slate-50 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition">
-                    <div class="text-4xl mb-6 text-[#D4AF37]">⚡</div>
-                    <h3 class="font-black text-xl mb-4 uppercase tracking-tight text-slate-800">Limitasi DC Fast Charge</h3>
-                    <p class="text-slate-600 leading-relaxed font-light">Arus tinggi menghasilkan haba kinetik melampau. Gunakan AC charging sebagai rutin utama untuk sel yang lebih sihat.</p>
-                </div>
-            </div>
-
-            <!-- Modern Data Table -->
-            <div class="bg-[#121212] text-white p-10 md:p-16 rounded-[3rem] shadow-2xl overflow-hidden relative">
-                <div class="flex items-center gap-4 mb-10">
-                    <div class="w-3 h-3 bg-[#D4AF37] rounded-full animate-pulse"></div>
-                    <h2 class="text-2xl font-bold uppercase tracking-widest">Low-Cost Strategy</h2>
-                </div>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left">
-                        <thead>
-                            <tr class="border-b border-white/10 text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-black">
-                                <th class="py-6 px-4">Teknik</th>
-                                <th class="py-6 px-4">Tindakan</th>
-                                <th class="py-6 px-4">Kesan Jangka Panjang</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-sm font-light divide-y divide-white/5">
-                            <tr class="group hover:bg-white/5 transition">
-                                <td class="py-6 px-4 font-bold uppercase italic tracking-tighter">Regen Braking</td>
-                                <td class="py-6 px-4 text-slate-400 font-medium">Set Tahap Maksimum</td>
-                                <td class="py-6 px-4 text-[#D4AF37] font-bold">Kestabilan Kitaran Mikro</td>
-                            </tr>
-                            <tr class="group hover:bg-white/5 transition">
-                                <td class="py-6 px-4 font-bold uppercase italic tracking-tighter">Eco-Driving</td>
-                                <td class="py-6 px-4 text-slate-400 font-medium">Elak Pecutan Mendadak</td>
-                                <td class="py-6 px-4 text-[#D4AF37] font-bold">Reduksi Haba Dalaman</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="p-12 bg-slate-50 border border-slate-100 rounded-sm">
+                    <div class="text-4xl mb-8">⚡</div>
+                    <h3 class="font-black text-xl mb-4 uppercase tracking-tighter">Thermal Discipline</h3>
+                    <p class="text-slate-600 leading-relaxed font-light">Haba adalah musuh utama sel. Limitasi DC Fast Charging akan memanjangkan jangka hayat molekul sebanyak 40%.</p>
                 </div>
             </div>
 
-            <div class="mt-20 border-l-8 border-[#D4AF37] bg-slate-50 p-12 rounded-r-[3rem] shadow-sm">
-                <p class="italic text-slate-700 text-2xl font-light leading-relaxed">
-                    "Kesihatan bateri anda adalah pelaburan jangka panjang. Penjagaan yang teliti bermula dari hari pertama menentukan nilai masa depan aset anda."
+            <div class="mt-20 border-l-8 border-[#D4AF37] bg-slate-100 p-12 shadow-inner">
+                <p class="italic text-slate-700 text-3xl font-light leading-snug">
+                    "Kualiti kejuruteraan bukan terletak pada pembaikan, tetapi pada pencegahan kemerosotan molekul bateri anda."
                 </p>
-                <p class="mt-8 font-black text-black uppercase tracking-[0.3em] text-xs">— The Surgeon Lab</p>
+                <p class="mt-10 font-black text-black uppercase tracking-[0.4em] text-[10px]">— Dr. Tech, Lead Surgeon</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#0a0a0a] text-center py-20 px-6 border-t border-white/5">
+    <!-- 10. Footer -->
+    <footer class="bg-[#0a0a0a] text-center py-32 px-6 border-t border-white/5">
         <div class="max-w-4xl mx-auto">
-            <div class="text-2xl font-black font-syne mb-6 tracking-tighter uppercase text-white">
-                BATTERY<span class="text-[#D4AF37]">SURGEON</span>
+            <div class="logo font-syne text-2xl uppercase mb-8 text-white">
+                BATTERY<span class="gold-text-gradient">SURGEON</span>
             </div>
-            <p class="text-slate-600 text-[10px] uppercase tracking-[0.5em] mb-10 font-bold">Built for Durability • Precision Engineering • 2026</p>
-            <div class="flex justify-center space-x-10 text-slate-500 text-[10px] font-bold uppercase tracking-widest">
-                <a href="#" class="hover:text-[#D4AF37] transition">Privacy</a>
-                <a href="#" class="hover:text-[#D4AF37] transition">Terms of Service</a>
-                <a href="#" class="hover:text-[#D4AF37] transition">Lab Location</a>
+            <p class="text-slate-600 text-[10px] uppercase tracking-[0.6em] mb-16 font-bold leading-loose">
+                Industrial Precision • Molecular Restoration • Future Sustainability
+            </p>
+            <div class="flex justify-center space-x-12 text-slate-500 text-[10px] font-black uppercase tracking-widest">
+                <a href="#" class="hover:text-[#D4AF37] transition">Lab Report</a>
+                <a href="#" class="hover:text-[#D4AF37] transition">Restoration Policy</a>
+                <a href="#" class="hover:text-[#D4AF37] transition">Confidentiality</a>
             </div>
         </div>
     </footer>
 
-    <!-- Call external logic and animations -->
+    <!-- Logic Script -->
     <script src="script.js"></script>
+
+    <!-- Animation & Preloader Script -->
+    <script>
+        // 1. Custom Cursor Logic
+        const cursor = document.querySelector('.custom-cursor');
+        const cursorOutline = document.querySelector('.custom-cursor-outline');
+        
+        window.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            cursorOutline.animate({
+                left: e.clientX + 'px',
+                top: e.clientY + 'px'
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        // 2. Preloader Logic
+        window.addEventListener('load', () => {
+            const loaderFill = document.getElementById('loaderFill');
+            const preloader = document.getElementById('preloader');
+            
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    preloader.style.opacity = '0';
+                    setTimeout(() => preloader.style.display = 'none', 1000);
+                } else {
+                    width++;
+                    loaderFill.style.width = width + '%';
+                }
+            }, 20);
+        });
+    </script>
 </body>
 </html>
