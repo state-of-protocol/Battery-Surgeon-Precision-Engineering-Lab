@@ -1,120 +1,164 @@
 /**
- * EV Battery Longevity - The Surgeon's Guide
- * Core Interactive Logic & Analytics
+ * Battery Surgeon - Core Interactive Logic & ROI Engine
+ * Version: 2.0 (Premium Industrial Edition)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Inisialisasi Sistem
+    initNavigation();
     initScrollReveal();
-    initBatteryCalculator();
-    initDarkMode();
-    console.log("🔋 Surgeon's System: Online & Monitoring Battery Health.");
+    initROICalculator();
+    initBatteryStressLogic();
+    
+    console.log("%c🔋 BATTERY SURGEON: Precision Engineering System Active.", "color: #D4AF37; font-weight: bold; font-size: 12px;");
 });
 
 /**
- * 1. Animation: Reveal elements on scroll
- * Menjadikan paparan lebih "smooth" dan profesional.
+ * 1. Smooth Navigation & Header Effect
+ */
+function initNavigation() {
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.padding = "15px 8%";
+            navbar.style.background = "rgba(10, 10, 10, 0.95)";
+        } else {
+            navbar.style.padding = "25px 8%";
+            navbar.style.background = "rgba(10, 10, 10, 0.8)";
+        }
+    });
+}
+
+/**
+ * 2. Precision ROI Calculator
+ * Mengira penjimatan kos pemulihan berbanding pembelian unit baru.
+ */
+function initROICalculator() {
+    const newPriceInput = document.getElementById('newBatteryPrice');
+    const unitInput = document.getElementById('unitCount');
+    const resultDisplay = document.getElementById('savingsResult');
+
+    if (!newPriceInput || !resultDisplay) return;
+
+    function calculate() {
+        const price = parseFloat(newPriceInput.value) || 0;
+        const units = parseInt(unitInput.value) || 1;
+        
+        if (price > 0) {
+            // Formula: Kos pemulihan adalah ~30% daripada harga baru. 
+            // Maka, penjimatan (ROI) adalah 70%.
+            const totalSavings = (price * 0.70) * units;
+            
+            animateCurrency(resultDisplay, totalSavings);
+        } else {
+            resultDisplay.innerText = "RM 0.00";
+        }
+    }
+
+    // Listener untuk input automatik
+    newPriceInput.addEventListener('input', calculate);
+    unitInput.addEventListener('input', calculate);
+}
+
+/**
+ * 3. Currency Animation
+ * Menghasilkan kesan nombor bergerak (counter) yang eksklusif.
+ */
+function animateCurrency(target, value) {
+    let start = 0;
+    const end = value;
+    const duration = 1000; // 1 saat
+    const startTime = performance.now();
+
+    function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Ease out function untuk pergerakan lebih smooth
+        const currentVal = progress * end;
+        
+        target.innerText = new Intl.NumberFormat('ms-MY', {
+            style: 'currency',
+            currency: 'MYR',
+            minimumFractionDigits: 2
+        }).format(currentVal);
+
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        }
+    }
+    requestAnimationFrame(update);
+}
+
+/**
+ * 4. Scroll Reveal Animation
+ * Memberikan kesan elemen muncul secara elegan apabila skrol.
  */
 function initScrollReveal() {
     const observerOptions = {
-        threshold: 0.1
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = "1";
                 entry.target.style.transform = "translateY(0)";
+                revealObserver.unobserve(entry.target); // Hanya jalan sekali
             }
         });
     }, observerOptions);
 
-    // Sasarkan kad dan seksyen untuk animasi
-    const elements = document.querySelectorAll('.card, section, table');
-    elements.forEach(el => {
+    // Sasarkan elemen-elemen penting
+    const targets = document.querySelectorAll('.step-card, .calc-card, .table-wrapper, .alert-box, h2');
+    
+    targets.forEach(el => {
         el.style.opacity = "0";
-        el.style.transform = "translateY(20px)";
-        el.style.transition = "all 0.6s ease-out";
-        observer.observe(el);
+        el.style.transform = "translateY(30px)";
+        el.style.transition = "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)";
+        revealObserver.observe(el);
     });
 }
 
 /**
- * 2. Calculator: Estimasikan "Stress Score" Bateri
- * Logik mudah untuk mendidik user tentang tabiat pengecasan.
+ * 5. Battery Stress Logic (Educational Tool)
+ * Fungsi tambahan untuk mengira "State of Health" berdasarkan parameter input.
  */
-function initBatteryCalculator() {
-    // Fungsi ini boleh dipanggil jika ada UI input di HTML
-    window.calculateBatteryStress = (chargeLevel, isFastCharge) => {
-        let stressScore = 0;
+function initBatteryStressLogic() {
+    window.analyzeBatteryHealth = (soc, temperature, isFastCharge) => {
+        let stressPoints = 0;
 
-        // Faktor Voltan
-        if (chargeLevel > 80 || chargeLevel < 20) {
-            stressScore += 50; // High stress zone
-        } else {
-            stressScore += 10; // Sweet spot
-        }
+        // Logik State of Charge (SOC)
+        if (soc > 85 || soc < 15) stressPoints += 40;
+        else if (soc > 70 || soc < 30) stressPoints += 15;
 
-        // Faktor Haba (DC vs AC)
-        if (isFastCharge) {
-            stressScore += 40;
-        }
+        // Logik Suhu
+        if (temperature > 40) stressPoints += 30;
 
-        displayHealthAlert(stressScore);
-        return stressScore;
+        // Logik Charging
+        if (isFastCharge) stressPoints += 30;
+
+        const healthStatus = stressPoints > 60 ? "CRITICAL" : (stressPoints > 30 ? "MODERATE" : "OPTIMUM");
+        
+        console.log(`[Diagnostic Report] Stress Level: ${stressPoints}% | Status: ${healthStatus}`);
+        return { stressPoints, healthStatus };
     };
 }
 
 /**
- * 3. Health UI Alert
- * Memberi feedback visual berdasarkan skor stress.
+ * 6. Utility: Smooth Scroll untuk Anchor Links
  */
-function displayHealthAlert(score) {
-    let message = "";
-    if (score >= 80) message = "⚠️ Amaran: Sel bateri dalam keadaan stress tinggi!";
-    else if (score >= 40) message = "🟡 Sederhana: Optimumkan rutin pengecasan anda.";
-    else message = "✅ Cemerlang: Anda menjaga jangka hayat bateri dengan baik.";
-    
-    console.log(`[Battery Monitor] Score: ${score}% - ${message}`);
-}
-
-/**
- * 4. Dark Mode Toggle
- * Menguruskan estetika visual mengikut keselesaan mata (Penting untuk pemandu waktu malam).
- */
-function initDarkMode() {
-    const darkModeBtn = document.querySelector('#dark-mode-toggle');
-    if (!darkModeBtn) return;
-
-    darkModeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
-        const isDark = document.body.classList.contains('dark-theme');
-        localStorage.setItem('ev-theme', isDark ? 'dark' : 'light');
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            window.scrollTo({
+                top: target.offsetTop - 80, // Offset untuk navbar
+                behavior: 'smooth'
+            });
+        }
     });
-
-    // Check saved preference
-    if (localStorage.getItem('ev-theme') === 'dark') {
-        document.body.classList.add('dark-theme');
-    }
-}
-
-/**
- * 5. Data Logger (Simulasi)
- * Untuk tujuan pendidikan: Log aktiviti pengecasan terakhir.
- */
-const batteryLog = {
-    logCharge(type, start, end) {
-        const timestamp = new Date().toLocaleString();
-        const efficiency = end - start;
-        console.table({
-            Event: "Charging Session",
-            Type: type, // AC or DC
-            Duration: `${efficiency}% added`,
-            Time: timestamp
-        });
-    }
-};
-
-// Export untuk kegunaan modul jika perlu
-if (typeof module !== 'undefined') {
-    module.exports = { batteryLog };
-}
+});
