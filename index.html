@@ -1,111 +1,253 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="ms" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EV Battery Longevity | The Surgeon's Guide</title>
+    <title>Battery Surgeon | Precision Engineering for Longevity</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        h1, h2, h3, .font-syne { font-family: 'Syne', sans-serif; }
+        
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), 
+                        url('https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2072&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+            border-color: #10b981; /* emerald-500 */
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 leading-relaxed">
+<body class="bg-slate-950 text-slate-200">
 
-    <header class="gradient-bg text-white py-16 px-6 shadow-xl">
-        <div class="max-w-4xl mx-auto text-center">
-            <span class="bg-emerald-500 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Edisi Pakar</span>
-            <h1 class="text-4xl md:text-5xl font-extrabold mt-4 mb-4">EV Battery Longevity</h1>
-            <p class="text-emerald-300 text-lg font-light tracking-wide">"The Surgeon's Guide to Lithium-Ion Health"</p>
+    <!-- Navigation -->
+    <nav class="glass-nav fixed w-full z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-extrabold tracking-tighter font-syne">
+                BATTERY<span class="text-emerald-500">SURGEON</span>
+            </div>
+            <ul class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-semibold">
+                <li><a href="#philosophy" class="hover:text-emerald-400 transition">Philosophy</a></li>
+                <li><a href="#services" class="hover:text-emerald-400 transition">The Surgery</a></li>
+                <li><a href="#calculator" class="hover:text-emerald-400 transition">ROI Calculator</a></li>
+            </ul>
+            <a href="https://wa.me/yournumber" class="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2 rounded-full text-sm font-bold transition shadow-lg shadow-emerald-900/20">
+                Consultation
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-gradient min-h-screen flex items-center justify-center pt-20 px-6 text-center">
+        <div class="max-w-4xl">
+            <span class="inline-block bg-emerald-500/10 text-emerald-400 text-xs font-bold px-4 py-1.5 rounded-full border border-emerald-500/20 uppercase tracking-[0.2em] mb-6">
+                Established 2026 • Precision Lab
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+                Reviving Power.<br><span class="text-emerald-500">Redefining Sustainability.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                Sains ketepatan untuk memulihkan jangka hayat sel Lithium-Ion melalui protokol pemulihan gred industri dan kepakaran kejuruteraan.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#calculator" class="bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-xl font-bold transition-all transform hover:scale-105">
+                    Calculate Your Savings
+                </a>
+                <a href="#services" class="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-8 py-4 rounded-xl font-bold backdrop-blur-sm transition">
+                    Explore Our Process
+                </a>
+            </div>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-12">
-        
-        <section class="mb-12 border-b border-gray-200 pb-8">
-            <h2 class="text-2xl font-bold mb-4 text-slate-800">📜 Sinopsis Repository</h2>
-            <p class="text-gray-600">
-                Panduan ini direka khusus untuk pemilik EV yang ingin mengekalkan <strong>State of Health (SoH)</strong> bateri pada tahap optimum. 
-                Menggunakan pendekatan sains kimia tanpa memerlukan kos aksesori yang mahal, sebaliknya memfokuskan kepada disiplin pengecasan.
-            </p>
-        </section>
+    <!-- ROI Calculator Section -->
+    <section id="calculator" class="py-24 px-6 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 text-white">Precision ROI Calculator</h2>
+                    <p class="text-slate-400 text-lg mb-8">
+                        Teknologi pemulihan sel kami membolehkan anda menjimatkan sehingga 70% daripada kos pembelian bateri baru. Masukkan data anda untuk melihat unjuran penjimatan.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 text-emerald-400">
+                            <span class="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-xs font-bold">✓</span>
+                            <span>Kurangkan Sisa E-Waste Global</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-emerald-400">
+                            <span class="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-xs font-bold">✓</span>
+                            <span>Maksimumkan ROI Aset Syarikat</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 gold-glow">
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-300 mb-2 uppercase tracking-wider">Kos Bateri Baru (RM)</label>
+                            <input type="number" id="newBatteryPrice" placeholder="Contoh: 40000" 
+                                   class="w-full bg-slate-950 border border-slate-700 rounded-xl px-5 py-4 text-emerald-400 focus:outline-none focus:border-emerald-500 transition text-xl font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-300 mb-2 uppercase tracking-wider">Kuantiti Unit</label>
+                            <input type="number" id="unitCount" value="1" 
+                                   class="w-full bg-slate-950 border border-slate-700 rounded-xl px-5 py-4 text-emerald-400 focus:outline-none focus:border-emerald-500 transition text-xl font-bold">
+                        </div>
+                        <div class="pt-6 border-t border-slate-700">
+                            <span class="text-slate-400 text-sm uppercase tracking-widest">Anggaran Penjimatan Anda:</span>
+                            <div id="savingsResult" class="text-4xl md:text-5xl font-black text-emerald-500 mt-2 font-syne">RM 0.00</div>
+                            <p class="text-xs text-slate-500 mt-4 italic">*Berdasarkan purata kos pemulihan 25% dari harga unit baru.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-8 text-slate-800 flex items-center">
-                <span class="bg-slate-800 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">01</span>
-                The Golden Rules (Protokol Utama)
-            </h2>
+    <!-- The Surgery Process -->
+    <section id="services" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 italic">The "Surgery" Protocol</h2>
+                <p class="text-slate-400">Setiap sel dirawat dengan protokol klinikal untuk menjamin prestasi puncak.</p>
+            </div>
             
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                    <div class="text-3xl mb-4">⚖️</div>
-                    <h3 class="font-bold text-lg mb-2">Zon Selamat 20-80</h3>
-                    <p class="text-sm text-gray-500">Hadkan cas harian pada 80%. Voltan tinggi (100%) dan rendah (0%) dalam tempoh lama akan memecahkan sel kimia.</p>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <!-- Step 1 -->
+                <div class="p-10 rounded-3xl bg-slate-900 border border-slate-800 card-hover transition-all">
+                    <div class="text-emerald-500 text-5xl font-black mb-6 opacity-20 font-syne">01</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Diagnostic & Stress Test</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Analisis mendalam terhadap ketahanan voltan dan rintangan dalaman setiap sel secara individu.</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                    <div class="text-3xl mb-4">⚡</div>
-                    <h3 class="font-bold text-lg mb-2">Kurangkan DC Fast Charge</h3>
-                    <p class="text-sm text-gray-500">Arus tinggi menghasilkan haba ($I^2R$). Gunakan AC Charging sebagai "makanan ruji" untuk sel yang lebih sejuk.</p>
+                <!-- Step 2 -->
+                <div class="p-10 rounded-3xl bg-slate-900 border border-slate-800 card-hover transition-all">
+                    <div class="text-emerald-500 text-5xl font-black mb-6 opacity-20 font-syne">02</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Cell Balancing</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Penyelarasan semula caj antara sel untuk memastikan pengagihan tenaga yang sekata dan efisien.</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                    <div class="text-3xl mb-4">📉</div>
-                    <h3 class="font-bold text-lg mb-2">Elak Deep Discharge</h3>
-                    <p class="text-sm text-gray-500">Jangan biarkan kereta tersadai bawah 10%. Risiko "Copper Shunting" boleh menyebabkan bateri mati terus (Bricked).</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                    <div class="text-3xl mb-4">🌡️</div>
-                    <h3 class="font-bold text-lg mb-2">Thermal Management</h3>
-                    <p class="text-sm text-gray-500">Parkir di tempat teduh. Suhu ideal bateri adalah 20°C - 30°C. Haba melampau mempercepatkan pereputan kimia.</p>
+                <!-- Step 3 -->
+                <div class="p-10 rounded-3xl bg-slate-900 border border-slate-800 card-hover transition-all">
+                    <div class="text-emerald-500 text-5xl font-black mb-6 opacity-20 font-syne">03</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Thermal Optimization</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Rawatan pada sistem pengurusan haba untuk mencegah degradasi pramatang akibat suhu tinggi.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="mb-12 bg-slate-100 p-8 rounded-2xl">
-            <h2 class="text-2xl font-bold mb-6 text-slate-800">🛠 Strategi "Low-Cost, High-Care"</h2>
-            <div class="overflow-x-auto">
-                <table class="w-full text-left bg-white rounded-lg overflow-hidden shadow-sm text-sm">
-                    <thead class="bg-slate-800 text-white">
-                        <tr>
-                            <th class="py-3 px-4 uppercase tracking-wider">Teknik</th>
-                            <th class="py-3 px-4 uppercase tracking-wider">Tindakan</th>
-                            <th class="py-3 px-4 uppercase tracking-wider">Kesan</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200 text-gray-600">
-                        <tr>
-                            <td class="py-4 px-4 font-semibold">Regen Braking</td>
-                            <td class="py-4 px-4">Set tahap Maksimum</td>
-                            <td class="py-4 px-4 text-emerald-600 font-medium">Cas mikro yang stabil</td>
-                        </tr>
-                        <tr>
-                            <td class="py-4 px-4 font-semibold">Eco-Driving</td>
-                            <td class="py-4 px-4">Elak pecutan mengejut</td>
-                            <td class="py-4 px-4 text-emerald-600 font-medium">Kurangkan haba dalaman</td>
-                        </tr>
-                        <tr>
-                            <td class="py-4 px-4 font-semibold">Smart Timer</td>
-                            <td class="py-4 px-4">Siap cas sebelum gerak</td>
-                            <td class="py-4 px-4 text-emerald-600 font-medium">Kurang stress voltan tinggi</td>
-                        </tr>
-                    </tbody>
-                </table>
+    <!-- Original Guide Content (Edisi Pakar) -->
+    <section id="philosophy" class="py-24 px-6 bg-white text-slate-900 rounded-t-[3rem]">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="h-px flex-1 bg-slate-200"></span>
+                <h2 class="text-2xl font-black uppercase tracking-widest text-slate-400 italic">Surgeon's Guide</h2>
+                <span class="h-px flex-1 bg-slate-200"></span>
             </div>
-        </section>
 
-        <section class="border-l-4 border-amber-500 bg-amber-50 p-6 rounded-r-xl">
-            <p class="italic text-amber-800">
-                "Bateri EV bukan seperti bateri telefon yang boleh ditukar ganti setiap tahun. Penjagaan pada hari pertama menentukan nilai jual semula (resale value) dan prestasi kereta anda selepas 10 tahun."
-            </p>
-            <p class="mt-2 font-bold text-amber-900">— Tips Surgeon</p>
-        </section>
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold mb-6 text-slate-800">The Golden Rules</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                        <div class="text-3xl mb-4 text-emerald-600">⚖️</div>
+                        <h3 class="font-bold text-lg mb-2 text-slate-800">Zon Selamat 20-80</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed">Hadkan cas harian pada 80%. Voltan tinggi (100%) dalam tempoh lama akan memecahkan sel kimia secara kekal.</p>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                        <div class="text-3xl mb-4 text-emerald-600">⚡</div>
+                        <h3 class="font-bold text-lg mb-2 text-slate-800">Kurangkan DC Fast Charge</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed">Arus tinggi menghasilkan haba melampau ($I^2R$). Gunakan AC Charging untuk sel yang lebih stabil.</p>
+                    </div>
+                </div>
+            </div>
 
-    </main>
+            <!-- Table Strategy -->
+            <div class="bg-slate-900 text-white p-8 rounded-3xl shadow-2xl mb-16">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <span class="w-2 h-8 bg-emerald-500 rounded-full"></span>
+                    Strategi "Low-Cost, High-Care"
+                </h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm">
+                        <thead class="border-b border-slate-700 text-emerald-400 uppercase tracking-widest">
+                            <tr>
+                                <th class="py-4 px-2">Teknik</th>
+                                <th class="py-4 px-2">Tindakan</th>
+                                <th class="py-4 px-2">Kesan</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800">
+                            <tr>
+                                <td class="py-4 px-2 font-bold uppercase italic">Regen Braking</td>
+                                <td class="py-4 px-2 text-slate-400">Set tahap Maksimum</td>
+                                <td class="py-4 px-2 text-emerald-400">Cas mikro stabil</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-2 font-bold uppercase italic">Eco-Driving</td>
+                                <td class="py-4 px-2 text-slate-400">Elak pecutan mengejut</td>
+                                <td class="py-4 px-2 text-emerald-400">Kurang haba dalaman</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-    <footer class="text-center py-10 text-gray-400 text-xs border-t border-gray-200">
-        <p>© 2026 Repository Penjagaan Bateri EV | Syeikh Edition</p>
-        <p class="mt-2 uppercase tracking-widest font-bold">Built for Durability</p>
+            <div class="border-l-8 border-emerald-500 bg-slate-50 p-8 rounded-r-3xl italic text-slate-700 text-lg shadow-inner">
+                "Bateri EV bukan seperti bateri telefon yang boleh ditukar ganti setiap tahun. Penjagaan pada hari pertama menentukan resale value anda."
+                <p class="mt-4 font-bold text-slate-900 not-italic uppercase tracking-widest text-sm">— Tips Surgeon</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-center py-16 px-6 border-t border-slate-900">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-xl font-black font-syne mb-4 tracking-tighter">BATTERY<span class="text-emerald-500">SURGEON</span></div>
+            <p class="text-slate-500 text-xs uppercase tracking-[0.4em] mb-8 font-bold">Built for Durability • 2026</p>
+            <div class="flex justify-center space-x-6 text-slate-400 text-sm font-semibold uppercase tracking-widest">
+                <a href="#" class="hover:text-emerald-500 transition">Privacy</a>
+                <a href="#" class="hover:text-emerald-500 transition">Terms</a>
+                <a href="#" class="hover:text-emerald-500 transition">Contact</a>
+            </div>
+        </div>
     </footer>
 
+    <script>
+        // Logic Kalkulator
+        const newPriceInput = document.getElementById('newBatteryPrice');
+        const unitInput = document.getElementById('unitCount');
+        const resultDisplay = document.getElementById('savingsResult');
+
+        function calculateSavings() {
+            const price = parseFloat(newPriceInput.value) || 0;
+            const units = parseInt(unitInput.value) || 0;
+            
+            // Anggaran penjimatan adalah 75% daripada harga baru 
+            // (Kos repair dianggarkan 25% daripada harga baru)
+            const totalSavings = (price * units) * 0.75;
+
+            resultDisplay.innerText = new Intl.NumberFormat('ms-MY', {
+                style: 'currency',
+                currency: 'MYR'
+            }).format(totalSavings);
+        }
+
+        newPriceInput.addEventListener('input', calculateSavings);
+        unitInput.addEventListener('input', calculateSavings);
+    </script>
 </body>
 </html>
